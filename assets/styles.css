@@ -46,17 +46,16 @@ header p {
   color: var(--gold-soft);
   opacity: .9;
 }
-/* Hero banner image (handles 1024x1024 nicely) */
+/* Hero image: show full image, no cropping */
 header .hero {
-  width: auto;          /* keep natural width */
-  max-width: 100%;      /* scale down to fit page */
-  height: auto;         /* keep natural aspect */
+  width: auto;           /* keep natural width */
+  max-width: 100%;       /* scale down to fit */
+  height: auto;          /* keep aspect ratio */
   margin-top: 1.2rem;
   border: 2px solid rgba(210,180,110,0.3);
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,.5);
 }
-
 
 /* Container */
 main {
@@ -80,8 +79,8 @@ main {
   /* Keep the 125x125 asset crisp without over-upscaling */
   width: 125px;
   height: 125px;
-  object-fit: contain;      /* avoid blur/stretch on small asset */
-  image-rendering: auto;    /* let browser handle smoothing */
+  object-fit: contain;
+  image-rendering: auto;
   border-radius: 10px;
   border: 1px solid rgba(210,180,110,.35);
   background: rgba(255,255,255,0.02);
@@ -97,17 +96,19 @@ main {
 }
 .item-content p {
   color: var(--muted);
-  margin: .4rem 0 1rem;
+  margin: .4rem 0 0.75rem;
   font-size: 1rem;
 }
 
-/* Download block */
-.download {
+/* Description (left) + Button (right) in one row */
+.download-row {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;   /* text left, button right */
   align-items: center;
-  gap: .75rem;
+  gap: 1rem;
+  margin-top: .5rem;
 }
+.download-row p { margin: 0; }
 
 /* Download button */
 .btn {
@@ -133,10 +134,6 @@ main {
 .btn:active { transform: translateY(0); }
 .btn svg { width: 18px; height: 18px; }
 
-/* Links (kept for future) */
-.link { color: var(--gold); text-decoration: underline; }
-.link:hover { color: #fff2bf; }
-
 /* Footer */
 footer {
   text-align: center;
@@ -151,9 +148,14 @@ footer {
   .item { flex-direction: column; }
   .item img {
     width: 100%;
-    height: auto;          /* avoid pixelation on small screens */
-    max-height: 220px;     /* keeps it tidy */
+    height: auto;
+    max-height: 220px;
     object-fit: contain;
+  }
+  .download-row {
+    flex-direction: column;
+    align-items: flex-start;  /* stack text above button on small screens */
+    gap: .6rem;
   }
   header h1 { font-size: 2.4rem; }
 }
