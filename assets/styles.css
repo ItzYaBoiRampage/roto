@@ -1,7 +1,7 @@
-/* === ROTO Shields Page – Ottoman-inspired dark theme === */
+/* === ROTO Add-ons – Ottoman-inspired dark theme === */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap');
 
-:root{
+:root {
   --bg:#0a0f14;          /* deep night navy */
   --panel:#111821;       /* dark panel */
   --line:#7a1c1c;        /* crimson line */
@@ -16,126 +16,144 @@
   --maxw:1000px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
-  font-family:'Source Serif 4', serif;
+body {
+  font-family: 'Source Serif 4', serif;
   background:
     radial-gradient(1200px 600px at 50% -10%, rgba(212,180,110,.07), transparent 60%),
     var(--bg);
-  color:var(--text);
-  line-height:1.6;
+  color: var(--text);
+  line-height: 1.6;
 }
 
 /* Header */
-header{
-  text-align:center;
-  padding:3.2rem 1rem 2.2rem;
-  background:linear-gradient(180deg, rgba(10,15,20,.9), rgba(10,15,20,.6));
-  border-bottom:2px solid var(--line);
+header {
+  text-align: center;
+  padding: 3.2rem 1rem 2.2rem;
+  background: linear-gradient(180deg, rgba(10,15,20,.9), rgba(10,15,20,.6));
+  border-bottom: 2px solid var(--line);
 }
-header h1{
-  font-family:'Cinzel', serif;
-  font-size:3rem;
-  letter-spacing:.5px;
-  color:var(--gold);
-  text-shadow:0 2px 12px rgba(0,0,0,.6);
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  letter-spacing: .5px;
+  color: var(--gold);
+  text-shadow: 0 2px 12px rgba(0,0,0,.6);
 }
-header p{
-  margin-top:.6rem;
-  color:var(--gold-soft);
-  opacity:.9;
+header p {
+  margin-top: .6rem;
+  color: var(--gold-soft);
+  opacity: .9;
+}
+/* Hero banner image (handles 1024x1024 nicely) */
+header .hero {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;      /* crops to a wide banner */
+  object-position: center;
+  margin-top: 1.2rem;
+  border: 2px solid rgba(210,180,110,0.3);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
 }
 
 /* Container */
-main{
-  max-width:var(--maxw);
-  margin:2rem auto;
-  padding:2rem 1rem;
+main {
+  max-width: var(--maxw);
+  margin: 2rem auto;
+  padding: 2rem 1rem;
 }
 
-/* Item card (similar layout to your old page, but new style) */
-.item{
-  display:flex;
-  gap:1.25rem;
-  background:var(--panel);
-  border:1px solid rgba(210,180,110,.25);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1.1rem;
-  margin-bottom:1.4rem;
+/* Item card */
+.item {
+  display: flex;
+  gap: 1.25rem;
+  background: var(--panel);
+  border: 1px solid rgba(210,180,110,.25);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+  margin-bottom: 1.4rem;
 }
-
-.item img{
-  width:120px;height:120px;
-  object-fit:cover;border-radius:10px;
-  border:1px solid rgba(210,180,110,.35);
+.item img {
+  /* Keep the 125x125 asset crisp without over-upscaling */
+  width: 125px;
+  height: 125px;
+  object-fit: contain;      /* avoid blur/stretch on small asset */
+  image-rendering: auto;    /* let browser handle smoothing */
+  border-radius: 10px;
+  border: 1px solid rgba(210,180,110,.35);
+  background: rgba(255,255,255,0.02);
 }
-
-.item-content{flex:1; min-width:0;}
-.item-content h2{
-  font-family:'Cinzel', serif;
-  font-size:1.5rem;
-  color:var(--gold);
-  margin-bottom:.35rem;
-  border-bottom:1px solid rgba(122,28,28,.35);
-  padding-bottom:.25rem;
+.item-content { flex: 1; min-width: 0; }
+.item-content h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: .35rem;
+  border-bottom: 1px solid rgba(122,28,28,.35);
+  padding-bottom: .25rem;
 }
-.item-content p{
-  color:var(--muted);
-  margin:.4rem 0 1rem;
-  font-size:1rem;
+.item-content p {
+  color: var(--muted);
+  margin: .4rem 0 1rem;
+  font-size: 1rem;
 }
 
 /* Download block */
-.download{
-  display:flex; flex-wrap:wrap;
-  align-items:center; gap:.75rem;
-}
-.download .meta{
-  font-size:.95rem; color:var(--gold-soft);
-  opacity:.95;
+.download {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
 }
 
 /* Download button */
-.btn{
-  display:inline-flex; align-items:center; gap:.5rem;
-  padding:.7rem 1.1rem;
-  background:linear-gradient(180deg, #b42222, #8f1717);
-  border:1px solid #7a1c1c;
-  border-radius:10px;
-  color:#fff; text-decoration:none; font-weight:700;
-  letter-spacing:.2px;
-  transition:transform .12s ease, box-shadow .2s ease, filter .15s ease;
-  box-shadow:0 6px 18px rgba(180,34,34,.25);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.1rem;
+  background: linear-gradient(180deg, #b42222, #8f1717);
+  border: 1px solid #7a1c1c;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .2px;
+  transition: transform .12s ease, box-shadow .2s ease, filter .15s ease;
+  box-shadow: 0 6px 18px rgba(180,34,34,.25);
 }
-.btn:hover{
-  transform:translateY(-1px);
-  box-shadow:0 10px 24px rgba(255,85,85,.28);
-  filter:saturate(1.05);
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(255,85,85,.28);
+  filter: saturate(1.05);
 }
-.btn:active{ transform:translateY(0); }
-.btn svg{ width:18px; height:18px; }
+.btn:active { transform: translateY(0); }
+.btn svg { width: 18px; height: 18px; }
 
-/* Subtle link style (for alt mirrors/changelog) */
-.link{
-  color:var(--gold);
-  text-decoration:underline;
-}
-.link:hover{ color:#fff2bf; }
+/* Links (kept for future) */
+.link { color: var(--gold); text-decoration: underline; }
+.link:hover { color: #fff2bf; }
 
 /* Footer */
-footer{
-  text-align:center;
-  padding:2rem 1rem 2.6rem;
-  color:var(--muted);
-  border-top:1px solid rgba(210,180,110,.25);
-  background:linear-gradient(180deg, rgba(10,15,20,.35), rgba(10,15,20,.75));
+footer {
+  text-align: center;
+  padding: 2rem 1rem 2.6rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(210,180,110,.25);
+  background: linear-gradient(180deg, rgba(10,15,20,.35), rgba(10,15,20,.75));
 }
 
 /* Responsive */
-@media (max-width:700px){
-  .item{ flex-direction:column; }
-  .item img{ width:100%; height:180px; }
-  header h1{ font-size:2.4rem; }
+@media (max-width:700px) {
+  .item { flex-direction: column; }
+  .item img {
+    width: 100%;
+    height: auto;          /* avoid pixelation on small screens */
+    max-height: 220px;     /* keeps it tidy */
+    object-fit: contain;
+  }
+  header h1 { font-size: 2.4rem; }
 }
