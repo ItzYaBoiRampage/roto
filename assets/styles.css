@@ -1,0 +1,89 @@
+body {
+  font-family: 'Uncial Antiqua', serif;
+  background: #0b0b0b url('https://www.transparenttextures.com/patterns/dark-denim.png');
+  color: #f8f0c6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #181818;
+  text-align: center;
+  padding: 3em 1em;
+  border-bottom: 2px solid #8c6f36;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #c6a34f;
+  margin: 0;
+}
+
+header p {
+  color: #d0c5a7;
+  font-size: 1.1em;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  margin-bottom: 2em;
+  padding: 1em;
+  background: #1d1d1d;
+  border: 1px solid #5a452b;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(198, 163, 79, 0.2);
+}
+
+.item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-content h2 {
+  color: #e3c97b;
+  font-size: 1.5em;
+  margin: 0 0 0.3em;
+}
+
+.item-content p {
+  color: #d0c5a7;
+  margin: 0 0 1em;
+  font-size: 0.95em;
+}
+
+.item-content a {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  color: #fdf3df;
+  background: #770000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.item-content a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #9d1e1e;
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+  background: #181818;
+  color: #7c6b3e;
+}
